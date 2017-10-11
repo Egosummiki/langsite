@@ -4,7 +4,9 @@
 
 </div>
 <div id="inner">
-    BLAH BLH
+    <?php
+        require_once('adverbs/adverbs.php');
+    ?>
 
 
 </div>

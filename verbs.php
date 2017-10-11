@@ -7,7 +7,8 @@
 
 </div>
 <div id="inner">
-    BLAH BLH
-
+    <?php
+        require_once('verbs/verbs.php');
+    ?>
 
 </div>
