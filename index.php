@@ -47,7 +47,7 @@ if(isset($_GET['menu']))
             <div id="top-bar-line">
             </div>    
         </div>
-        <div id="content">
+        <div id="content" onload="onLoadContent()">
                     <?php
                         $file_name = strtolower($menu_items[$current_menu]).".php";
 

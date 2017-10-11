@@ -1,3 +1,36 @@
+function loadSidemenu()
+{
+    let sidemenu = document.getElementById("side-menu");
+    
+    if(sidemenu != null)
+    {
+        let numItems = sidemenu.childNodes.length;
+    
+        for(var i = 0; i < numItems; i++)
+        {
+            let dom = sidemenu.childNodes[i];
+            if(dom.className == "side-menu-item" || dom.className == "side-menu-item-selected")
+            {
+                dom.addEventListener("click", (function(self) {
+                    
+                    return function() {
+                        document.getElementsByClassName("side-menu-item-selected")[0].className = "side-menu-item";
+                        self.className = "side-menu-item-selected";
+
+                        ajax(document.getElementsByClassName('menu-item-current')[0].innerText.toLocaleLowerCase()
+                        + '/' + self.innerText.toLocaleLowerCase() + '.php', "", function (result) {
+                            let inner = document.getElementById("inner");
+                            inner.innerHTML = result;
+                        });
+                    };
+
+                })(dom));
+
+            }
+        }
+    }
+}
+
 function onLoad()
 {
     for(var i = 0; i < 5; i++)
@@ -11,8 +44,10 @@ function onLoad()
 
             ajax(menu_item_clicked.innerText.toLocaleLowerCase() + ".php", "", function(res){
                 document.getElementById("content").innerHTML = res;
-
+                loadSidemenu();
             });
         };})(i) );
     }
+
+    loadSidemenu();
 }

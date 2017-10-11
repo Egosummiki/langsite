@@ -67,6 +67,7 @@ body {
     top: 0px;
     right: 0px;
     bottom: 0px;
+    overflow: scroll;
 }
 
 #top-bar-line {
