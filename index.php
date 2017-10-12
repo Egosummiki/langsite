@@ -21,7 +21,7 @@ if(isset($_GET['menu']))
     <script src="lib/ajax.js"></script>
     <script src="main.js"></script>
 
-    <title>Test language site</title>
+    <title>Lang Site</title>
 </head>
 <body onload="onLoad()">
     <div id="main-container">

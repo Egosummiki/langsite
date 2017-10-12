@@ -70,9 +70,11 @@ body {
     overflow: scroll;
 }
 
+$accent-color: #186522;
+
 #top-bar-line {
     height: 6px;
-    background-color: #186522;
+    background-color: $accent-color;
 }
 
 .side-menu-item, .side-menu-item-selected {
